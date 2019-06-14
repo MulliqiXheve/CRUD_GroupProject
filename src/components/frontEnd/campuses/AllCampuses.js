@@ -8,7 +8,7 @@ function AllCampuses() {
   return (
     <div >
         <h1>All Campuses</h1>
-      <button class="btn btn-outline-success" type="button"><Link  to='/CampusesForm'>Add Campus</Link></button>
+      <Link  to='/CampusesForm'>Add Campus</Link>
       
     </div>
   );
