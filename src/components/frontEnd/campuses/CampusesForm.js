@@ -1,7 +1,10 @@
 import React from 'react';
 //import App from './App.css';
 import {Link} from 'react-router-dom';
+<<<<<<< HEAD
 import CampusesCart from './CampusesCart';
+=======
+>>>>>>> 20e533a485691d98d3ccc58f5b4337665291175d
 
 
 
