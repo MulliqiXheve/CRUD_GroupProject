@@ -1,25 +1,23 @@
 import React from 'react';
 //import App from './App.css';
 import {Link} from 'react-router-dom';
+import StudentsCart from './StudentsCart';
+import addStudentForm from './addStudentForm';
 
 
 
 function StudentsForm() {
   return (
     <div >
-      <form action="" method="Post"> 
-       <p>First name:</p>
-     
-     <input type="text" name="firstname" />
-       
-      <p>Last name:</p>
-       
-     <input type="text" name="lastname" />
-   
-      <input type="submit" value="Submit"/>
-      </form>
-      </div>
-    
+
+       <StudentsCart />
+        <StudentsCart />
+        <StudentsCart />
+        <StudentsCart />
+
+        <button  href="#" class="btn btn-success" ><Link to="/addStudentForm">Add Student</Link></button>
+      
+    </div>
   )
 }
 

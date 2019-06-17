@@ -1,46 +1,57 @@
+
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Card from './components/Card'
-import NavBar from './components/NavBar'
-import Home from '../src/screens/Home'
-import {Route,Switch} from 'react-router-dom'
-import CampusListing from './screens/CampusListing';
-import AddCampusScreen from './screens/AddCampusScreen';
-import Students from '../src/screens/Students'
-import EditScreen from './screens/EditCampusScreen'
-import EditStudentScreen from '../src/screens/EditStudentScreen'
-import {createStore, applyMiddleware} from 'redux';
-import {connect} from 'react-redux'
-import ReduxThunk from 'redux-thunk';
-import {Provider} from 'react-redux';
-import reducers from './store/reducers'
-import AddStudentScreen from './screens/AddStudentScreen'
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import AllStudents from './components/frontEnd/students/AllStudents'
+import AllCampuses from './components/frontEnd/campuses/AllCampuses'
+import StudentsForm from './components/frontEnd/students/StudentsForm'
+import CampusesForm from './components/frontEnd/campuses/CampusesForm'
+import AddStudentsForm from './components/frontEnd/students/addStudentForm'
+import AddCampusForm from './components/frontEnd/campuses/addCampusForm'
+import Notfound from './components/frontEnd/notFound'
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
+import * as serviceWorker from './serviceWorker';
+import Home from './components/frontEnd/Home';
 
 
-function App() {
+const routing = (
+    <Router>
+      <div class="text-primary">
 
-  const store= createStore(reducers, {}, applyMiddleware(ReduxThunk));
-  return (
-    <React.Fragment>
+      <ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+    <a class="nav-link active" type="button"><Link to="/Home">Home</Link>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" type="button"><Link to='/AllCampuses'>All Campuses</Link></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" type="button"><Link  to='/AllStudents'>All Students</Link></a>
+  </li>
 
-    <Provider store= {store} >
-    <NavBar/>
 
-    <Switch>
+</ul>
 
-    <Route path='/editStudentScreen' component={EditStudentScreen}/>
-    <Route path='/editCampusScreen' component={EditScreen}/>
-    <Route path='/campusListing' component={CampusListing}/>
-    <Route path='/students' component={Students}/>
-    <Route path='/addCampuses' component={AddCampusScreen}/>
-    <Route path='/addStudent' component={AddStudentScreen}/>
-    <Route path='/' component={Home}/>
-    </Switch>
-    </Provider>
-  
-    </React.Fragment>
-  );
-}
+   
+   
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route path="/AllStudents" component={AllStudents} />
+          <Route path="/AllCampuses" component={AllCampuses} />
 
-export default App;
+          <Route path="/StudentsForm" component={StudentsForm} />
+          <Route path="/CampusesForm" component={CampusesForm} />
+          <Route path="/addStudentForm" component={AddStudentsForm} />
+          <Route path="/addCampusForm" component={AddCampusForm} />
+          <Route path="/Home" component={Home} />
+
+
+          
+          <Route component={Notfound} />
+        </Switch>
+      </div>
+    </Router>
+  )
+  export default routing;

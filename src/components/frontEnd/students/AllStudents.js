@@ -5,11 +5,14 @@ import StudentsForm from './StudentsForm'
 
 
 
+
 function AllStudents() {
   return (
     <div >
       <h1>All Students</h1>
-      <Link  to='/StudentsForm'>Add Student</Link>
+      
+      <button type="button" class="btn btn-lg btn-info  btn-block"><Link  to='/StudentsForm'>Show all Students</Link></button>
+      
     </div>
   );
 }
