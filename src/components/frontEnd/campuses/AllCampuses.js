@@ -9,7 +9,7 @@ function AllCampuses() {
   return (
     <div >
       <h1>All Campuses</h1>
-      <button type="button" class="btn btn-lg btn-info  btn-block"><Link  to='/CampusesForm'>Show all students</Link></button>
+      <button type="button" class="btn btn-lg btn-info  btn-block"><Link  to='/CampusesForm'>Show all Campuses</Link></button>
       
     </div>
   );
